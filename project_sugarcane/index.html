@@ -27,6 +27,8 @@
   --text-dim:  #7d7167;
   --accent:    #d4913a;
   --heading:   #f0ebe4;
+  --tag-bg:    #2e2a27;
+  --tag-text:  #d4913a;
 }
 
 body {
@@ -109,6 +111,35 @@ nav a:hover { color: var(--accent); }
   border-radius: 4px;
   font-size: .8rem;
   font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.venue {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  margin-top: 1rem;
+  line-height: 1.9;
+}
+
+.venue a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.venue a:hover { text-decoration: underline; }
+
+.tag {
+  display: inline-block;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  margin: 0.2rem 0.3rem 0.2rem 0;
+  vertical-align: middle;
+  font-weight: 500;
 }
 
 section { margin-top: 2rem; }
@@ -204,19 +235,30 @@ footer a { color: var(--accent); }
       Universidade Federal de Uberlândia · Cornell University
     </div>
     <div class="status">Working Paper · Submission planned for 2026</div>
+
+    <div class="venue">
+      Submission planned for 2026.
+      <br>
+      <a href="project_sugarcane/" target="_blank">Project Page</a>
+      <br><br>
+      Presentations:
+      <br>
+      <span class="tag">Anpec 2024, Natal-RN, Brazil</span>
+      <span class="tag">AERE@ASSA 2027, Washington, D.C., US.</span>
+    </div>
   </div>
 
   <section>
     <h2>Abstract</h2>
-   <div class="card">
-  <p>São Paulo, the major sugarcane-producing state in Brazil, commands over a fifth of the world's sugarcane production.  <p>
-   <p> This paper examines how the transition from manual pre-harvest burning to mechanical harvesting affected public health across São Paulo municipalities.  <p>
-    <p>Using a difference-in-differences design that exploits variation in municipal sugarcane land share, we find that greater exposure to the technical change reduced hospitalizations for respiratory and circulatory diseases.  <p>
-    <p>Most distinctively, we document reductions in pollution-linked congenital anomalies and in respiratory mortality among children under five. Adult mortality from respiratory and circulatory causes shows no effect.  <p>
-    <p>We directly confirm the smoke mechanism: fire incidence on sugarcane fields and particulate matter concentrations fell exclusively during the harvest season, and hospitalization reductions were disproportionately concentrated in those same months.  <p>
-    <p>Robustness is corroborated by wind direction: municipalities downwind of sugarcane areas benefited more. Placebo tests across other diagnostic groups confirm that effects concentrate precisely where the biological mechanism predicts.</p>
-  <p style="margin-top:1rem"><strong style="color:var(--heading)">Keywords:</strong> Sugarcane Burning; Technical Change; Health Outcomes; Air Pollution. &nbsp;·&nbsp; <strong style="color:var(--heading)">JEL Codes:</strong> Q52, Q55, I18.</p>
-</div>
+    <div class="card">
+      <p>São Paulo, the major sugarcane-producing state in Brazil, commands over a fifth of the world's sugarcane production.</p>
+      <p>This paper examines how the transition from manual pre-harvest burning to mechanical harvesting affected public health across São Paulo municipalities.</p>
+      <p>Using a difference-in-differences design that exploits variation in municipal sugarcane land share, we find that greater exposure to the technical change reduced hospitalizations for respiratory and circulatory diseases.</p>
+      <p>Most distinctively, we document reductions in pollution-linked congenital anomalies and in respiratory mortality among children under five. Adult mortality from respiratory and circulatory causes shows no effect.</p>
+      <p>We directly confirm the smoke mechanism: fire incidence on sugarcane fields and particulate matter concentrations fell exclusively during the harvest season, and hospitalization reductions were disproportionately concentrated in those same months.</p>
+      <p>Robustness is corroborated by wind direction: municipalities downwind of sugarcane areas benefited more. Placebo tests across other diagnostic groups confirm that effects concentrate precisely where the biological mechanism predicts.</p>
+      <p style="margin-top:1rem"><strong style="color:var(--heading)">Keywords:</strong> Sugarcane Burning; Technical Change; Health Outcomes; Air Pollution. &nbsp;·&nbsp; <strong style="color:var(--heading)">JEL Codes:</strong> Q52, Q55, I18.</p>
+    </div>
   </section>
 
   <section>
@@ -225,15 +267,14 @@ footer a { color: var(--accent); }
 
       <div class="resource">
         <div class="resource-title">Paper</div>
-<a href="https://leonardocardoso005.github.io/papers/sugarcane-burning.pdf" target="_blank">Download PDF</a>
+        <a href="https://leonardocardoso005.github.io/papers/sugarcane-burning.pdf" target="_blank">Download PDF</a>
       </div>
 
-<div class="resource">
-  <div class="resource-title">Replication Package</div>
-  <span style="color:var(--text-dim); font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.85rem;">Available upon acceptance</span>
-</div>
+      <div class="resource">
+        <div class="resource-title">Replication Package</div>
+        <span style="color:var(--text-dim); font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.85rem;">Available upon acceptance</span>
+      </div>
 
-    
     </div>
   </section>
 
