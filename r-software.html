@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>R Software · Leonardo C. B. Cardoso</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0f1117;
+      --bg-alt:    #161b27;
+      --border:    #1e2535;
+      --text:      #c9d1e0;
+      --text-dim:  #6b7a99;
+      --accent:    #7aa2f7;
+      --accent2:   #9ece6a;
+      --heading:   #e2e8f5;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 6rem;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      gap: 1.6rem;
+      margin-bottom: 3.5rem;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+    }
+    nav a {
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    nav a:hover { color: var(--accent); }
+    nav a.active { color: var(--accent); }
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: normal;
+      color: var(--heading);
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      margin-bottom: 2.5rem;
+      font-style: italic;
+    }
+
+    h2 {
+      font-size: 0.78rem;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.4rem;
+      margin-top: 2.8rem;
+    }
+
+    /* ── STEP BLOCKS ── */
+    .step {
+      margin-bottom: 2rem;
+    }
+    .step-label {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 0.3rem;
+    }
+    .step h3 {
+      font-size: 1rem;
+      color: var(--heading);
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+    .step p { margin-bottom: 0.6rem; }
+
+    /* ── VIDEO EMBED ── */
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 1rem 0 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* ── RESOURCE LINKS ── */
+    .resource-link {
+      display: inline-block;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.65rem;
+      border-radius: 3px;
+      margin: 0.3rem 0.3rem 0 0;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .resource-link:hover {
+      border-color: var(--accent);
+      color: var(--heading);
+    }
+
+    .tip {
+      background: var(--bg-alt);
+      border-left: 3px solid var(--accent2);
+      padding: 0.8rem 1rem;
+      font-size: 0.92rem;
+      margin: 1rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .tip code {
+      font-family: "Courier New", monospace;
+      font-size: 0.85rem;
+      color: var(--accent2);
+      background: var(--bg);
+      padding: 0.1rem 0.3rem;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 500px) {
+      body { padding: 2rem 1rem 4rem; }
+      nav { flex-wrap: wrap; gap: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">About</a>
+  <a href="index.html#working-papers">Working Papers</a>
+  <a href="index.html#publications">Publications</a>
+  <a href="r-software.html" class="active">R Software</a>
+</nav>
+
+<h1>R Software</h1>
+<p class="subtitle">Uma tentativa de monitoria em R — com exemplos ligados à Agricultura e ao Desenvolvimento Econômico.</p>
+
+<!-- ══ INTRO ══ -->
+<section>
+  <div class="step">
+    <div class="step-label">Introdução</div>
+    <h3>Por onde começar?</h3>
+    <p>O objetivo aqui é simples: que você consiga andar só. Os cinco passos abaixo cobrem instalação, acesso a dados e visualização. Domine esses e você já tem base para qualquer análise econômica com R.</p>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/a2RNNGCfFfo" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PASSO 1 ══ -->
+<h2>Passo 1 · Instalar o R e o RStudio</h2>
+<div class="step">
+  <p>Minha expectativa é que vocês consigam instalar sozinhos. O vídeo do Código Agro ajuda bastante, mas uma busca por "instalar R e RStudio" no YouTube vai mostrar uma dúzia de opções — qualquer uma serve.</p>
+  <a class="resource-link" href="https://www.youtube.com/watch?v=PgTGLHAGdIE" target="_blank">▶ Vídeo — Código Agro</a>
+  <a class="resource-link" href="https://docs.google.com/presentation/d/1VUAIMCAPVx1NaYXnb6vVCsuSi38Vuohq/edit" target="_blank">Slides — Semana do Agronegócio</a>
+</div>
+
+<!-- ══ PASSO 2 ══ -->
+<h2>Passo 2 · Dominar os três repositórios principais</h2>
+<div class="step">
+  <p>Dominando esses três você já consegue acessar dados de mercados domésticos (Sidra + Ipeadata) e dados de mercados internacionais (Our World in Data).</p>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/NKBK0Thfh8A" allowfullscreen></iframe>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-label">Ipeadata</div>
+  <h3>Acessando o Ipeadata via R</h3>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/hjC1cyPDDS4" allowfullscreen></iframe>
+  </div>
+  <a class="resource-link" href="https://rpubs.com/leonardocardoso005/ipeadatar" target="_blank">RPubs — Ipeadatar</a>
+</div>
+
+<div class="step">
+  <div class="step-label">Our World in Data</div>
+  <h3>Acessando o Our World in Data via R</h3>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/iHB1-KlKL6c" allowfullscreen></iframe>
+  </div>
+  <a class="resource-link" href="https://rpubs.com/leonardocardoso005/ourworldindata" target="_blank">RPubs — Our World in Data</a>
+</div>
+
+<div class="step">
+  <div class="step-label">Sidra / IBGE</div>
+  <h3>Acessando o Sidra via R</h3>
+  <a class="resource-link" href="https://rpubs.com/leonardocardoso005/sidrar" target="_blank">RPubs — Sidra</a>
+</div>
+
+<!-- ══ PASSO 3 ══ -->
+<h2>Passo 3 · Base dos Dados</h2>
+<div class="step">
+  <p>Caso os dados não existam nos repositórios anteriores, ou caso você precise fazer agregações usando SQL, recomendo fortemente o <a href="http://basedosdados.org" target="_blank">basedosdados.org</a>. Para acessar os dados diretamente pelo R você precisa de três coisas: uma conta no Google Cloud, um projeto válido, e saber acessar os dados.</p>
+
+  <div class="step-label" style="margin-top:1.2rem;">Por que usar?</div>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/TVZp5eRCYNc" allowfullscreen></iframe>
+  </div>
+
+  <div class="step-label" style="margin-top:1.4rem;">Google Cloud + Projeto</div>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/Z2t0IJqRJbs" allowfullscreen></iframe>
+  </div>
+
+  <div class="step-label" style="margin-top:1.4rem;">Acessando os dados</div>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/DZFib6DV8bQ" allowfullscreen></iframe>
+  </div>
+
+  <a class="resource-link" href="https://rpubs.com/leonardocardoso005/homicidios1" target="_blank">RPubs — Exemplo com Base dos Dados</a>
+</div>
+
+<!-- ══ PASSO 4 ══ -->
+<h2>Passo 4 · Mapas</h2>
+<div class="step">
+  <p>Um mapa salva seu TCC, um mapa salva sua apresentação. Aprenda a fazer mapas.</p>
+  <a class="resource-link" href="https://rpubs.com/leonardocardoso005/1175329" target="_blank">RPubs — Mapas no R</a>
+</div>
+
+<!-- ══ PASSO 5 ══ -->
+<h2>Passo 5 · Grandes Bases de Dados</h2>
+<div class="step">
+  <p>Caso você precise ler, manipular ou guardar bases muito grandes, dois conselhos rápidos:</p>
+  <div class="tip">
+    Use <code>library(arrow)</code> para ler arquivos grandes, e salve suas bases no formato <code>.parquet</code> — é muito mais rápido e ocupa menos espaço do que CSV.
+  </div>
+  <a class="resource-link" href="https://rpubs.com/leonardocardoso005/1175329" target="_blank">RPubs — Grandes Bases</a>
+</div>
+
+<footer style="margin-top:4rem; border-top:1px solid var(--border); padding-top:1rem; font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.78rem; color:var(--text-dim);">
+  Leonardo C. B. Cardoso &nbsp;·&nbsp; <a href="mailto:leonardocardoso@ufv.br">leonardocardoso@ufv.br</a>
+</footer>
+
+</body>
+</html>
