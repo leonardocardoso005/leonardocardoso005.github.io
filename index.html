@@ -4,6 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Leonardo C. B. Cardoso</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DTBWBQ5DR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0DTBWBQ5DR');
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -28,9 +36,8 @@
       line-height: 1.75;
     }
 
-    /* ── TOP NAV ── */
     nav {
-      background: #161412; border: 0.5px solid var(--border);
+      background: #161412;
       border-bottom: 1px solid var(--border);
       padding: 0 2rem;
       display: flex;
@@ -59,15 +66,13 @@
     }
     nav a:hover { color: var(--accent); }
 
-    /* ── PAGE WRAPPER ── */
     .page { max-width: 960px; margin: 0 auto; padding: 2.5rem 1.5rem 6rem; }
 
-    /* ── HERO: two-column ── */
     .hero {
       display: grid;
       grid-template-columns: 200px 1fr;
       gap: 2.5rem;
-      background: #161412; border: 0.5px solid var(--border);
+      background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 2rem;
@@ -118,7 +123,6 @@
     .contact-links a { color: var(--accent); text-decoration: none; }
     .contact-links a:hover { text-decoration: underline; }
 
-    /* ── SECTIONS ── */
     section { margin-bottom: 2.5rem; }
     h2 {
       font-family: "Helvetica Neue", Arial, sans-serif;
@@ -131,10 +135,9 @@
       margin-bottom: 1.2rem;
     }
 
-    /* ── PAPER ENTRIES ── */
     .paper {
       padding: 1rem 1.2rem;
-      background: #161412; border: 0.5px solid var(--border);
+      background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 6px;
       margin-bottom: 0.8rem;
@@ -206,7 +209,6 @@
 
 <div class="page">
 
-  <!-- ══════ HERO ══════ -->
   <div class="hero" id="about">
     <div class="hero-photo">
       <!-- Substitua pelo caminho da sua foto: <img src="photo.jpg" alt="Leonardo Cardoso"> -->
@@ -224,9 +226,7 @@
         at <a href="https://www.ufv.br/" style="color:var(--accent)">Universidade Federal de Viçosa</a>, Brazil.
         I am currently a Visiting Researcher at Texas A&amp;M University (until Jan-2027).
       </p>
-      <p>
-Research Interests: Energy Economics, Agricultural Economics, Environmental Economics, and Health Economics.
-      </p>
+      <p>Research Interests: Energy Economics, Agricultural Economics, Environmental Economics, and Health Economics.</p>
       <div class="contact-links">
         <a href="mailto:leonardocardoso@ufv.br">leonardocardoso@ufv.br</a>
         <a href="https://scholar.google.com/citations?user=3CVN9PIAAAAJ&hl=pt-BR" target="_blank">Google Scholar</a>
@@ -235,7 +235,6 @@ Research Interests: Energy Economics, Agricultural Economics, Environmental Econ
     </div>
   </div>
 
-  <!-- ══════ WORKING PAPERS ══════ -->
   <section id="working-papers">
     <h2>Working Papers &amp; Work in Progress</h2>
 
@@ -248,15 +247,15 @@ Research Interests: Energy Economics, Agricultural Economics, Environmental Econ
       </div>
     </div>
 
-<div class="paper">
-  <div class="title">Technical Change and Health: Evidence from the Reduction of Sugarcane Burning in Brazil</div>
-  <div class="coauthors">with Liqing Li, Deyvid Leite, Daiana Wischral, and David Just</div>
-  <div class="venue">Submission planned for 2026. &nbsp;·&nbsp;
-    <a href="https://leonardocardoso005.github.io/papers/sugarcane-burning.pdf" target="_blank">PDF</a>
-    <span class="tag">Anpec 2024, Natal-RN, Brazil</span>
-    <span class="tag">AERE@ASSA 2027, Washington, D.C., US.</span>
-  </div>
-</div>
+    <div class="paper">
+      <div class="title">Technical Change and Health: Evidence from the Reduction of Sugarcane Burning in Brazil</div>
+      <div class="coauthors">with Liqing Li, Deyvid Leite, Daiana Wischral, and David Just</div>
+      <div class="venue">Submission planned for 2026. &nbsp;·&nbsp;
+        <a href="https://leonardocardoso005.github.io/papers/sugarcane-burning.pdf" target="_blank">PDF</a>
+        <span class="tag">Anpec 2024, Natal-RN, Brazil</span>
+        <span class="tag">AERE@ASSA 2027, Washington, D.C., US.</span>
+      </div>
+    </div>
 
     <div class="paper">
       <div class="title">Residential Pesticide Exposure and Child Health Outcomes in Brazil</div>
@@ -278,13 +277,13 @@ Research Interests: Energy Economics, Agricultural Economics, Environmental Econ
     </div>
 
     <div class="paper">
-      <div class="title">When Privatization Raises Prices: Refinery Diverstment and Consumer Welfare in Brazil</div>
+      <div class="title">When Privatization Raises Prices: Refinery Divestment and Consumer Welfare in Brazil</div>
       <div class="coauthors">with Pietro Figueiredo and Laura R. A. Soares</div>
-    <div class="venue">Submission planned for 2026. &nbsp;·&nbsp;
+      <div class="venue">Submission planned for 2026. &nbsp;·&nbsp;
         <a href="https://leonardocardoso005.github.io/papers/privatizing-refinery.pdf" target="_blank">PDF</a>
-    <span class="tag">Anpec 2025, São Paulo-SP, Brazil</span>
-  </div>
-</div>
+        <span class="tag">Anpec 2025, São Paulo-SP, Brazil</span>
+      </div>
+    </div>
 
     <div class="paper">
       <div class="title">Bike-Sharing Services as an Alternative in Urban Transportation: Evidence from a Developing Country</div>
@@ -293,12 +292,11 @@ Research Interests: Energy Economics, Agricultural Economics, Environmental Econ
         <a href="https://drive.google.com/file/d/1cjlRV-iInqHeN4IiqXJep4TzxLbYrQYB/view?usp=sharing" target="_blank">Draft</a>
       </div>
     </div>
-
   </section>
 
-  <!-- ══════ PUBLICATIONS (EN) ══════ -->
   <section id="publications">
     <h2>Publications</h2>
+
     <div class="paper">
       <div class="title">Biofuels Policies and Fuel Demand Elasticities in Brazil</div>
       <div class="coauthors">with Maurício V. L. Bittencourt, Wade H. Litt, and Elena G. Irwin</div>
@@ -314,7 +312,7 @@ Research Interests: Energy Economics, Agricultural Economics, Environmental Econ
         <a href="https://doi.org/10.1111/pirs.12645" target="_blank">Link</a>
       </div>
     </div>
-    
+
     <div class="paper">
       <div class="title">Distributional Effects of Gasoline Taxes in Brazil</div>
       <div class="coauthors">with Bruno Y. Hipólito and Felipe de F. Silva</div>
@@ -355,7 +353,6 @@ Research Interests: Energy Economics, Agricultural Economics, Environmental Econ
       </div>
     </div>
 
-
     <div class="paper">
       <div class="title">Welfare Impacts of a Negative Income Tax on Regions of Brazil</div>
       <div class="coauthors">with Rayan Wolf, Ângelo C. Gurgel, Marcos S. Nazareth, Ian Trotter, and Erly C. Teixeira</div>
@@ -395,10 +392,8 @@ Research Interests: Energy Economics, Agricultural Economics, Environmental Econ
         <a href="https://www.econjournals.com/index.php/ijeep/article/view/8787" target="_blank">Link</a>
       </div>
     </div>
-
   </section>
 
-  <!-- ══════ PUBLICATIONS (PT) ══════ -->
   <section id="pt-publications">
     <h2>Publicações em Periódicos Brasileiros</h2>
 
@@ -511,13 +506,12 @@ Research Interests: Energy Economics, Agricultural Economics, Environmental Econ
         <a href="https://www.scielo.br/j/resr/a/3JDgGVvDC5KbqgbSNKrtb9Q/" target="_blank">Link</a>
       </div>
     </div>
-
   </section>
 
   <footer>
     Leonardo C. B. Cardoso &nbsp;·&nbsp; <a href="mailto:leonardocardoso@ufv.br">leonardocardoso@ufv.br</a>
   </footer>
 
-</div><!-- .page -->
+</div>
 </body>
 </html>
