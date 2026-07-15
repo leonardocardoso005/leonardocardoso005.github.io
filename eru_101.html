@@ -98,3 +98,190 @@
     .ementa-link {
       display: inline-block;
       font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+      margin-top: 0.5rem;
+      transition: text-decoration 0.15s;
+    }
+    .ementa-link:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.2rem;
+      margin-top: 2.2rem;
+    }
+
+    .material-section {
+      margin-bottom: 2rem;
+    }
+
+    .material-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .material-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.2rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .material-item:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 8px rgba(212, 145, 58, 0.1);
+    }
+
+    .material-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+      line-height: 1;
+    }
+
+    .material-name {
+      font-size: 1rem;
+      color: var(--heading);
+      margin-bottom: 0.4rem;
+      font-weight: normal;
+    }
+
+    .material-desc {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-bottom: 0.8rem;
+      flex-grow: 1;
+    }
+
+    .material-link {
+      display: inline-block;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.75rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: text-decoration 0.15s;
+    }
+
+    .material-link:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-bottom: 1.2rem;
+    }
+
+    .breadcrumb a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: text-decoration 0.15s;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      margin-top: 3rem;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+    footer a { color: var(--accent); }
+
+    @media (max-width: 500px) {
+      body { padding: 2rem 1rem 4rem; }
+      nav { flex-wrap: wrap; gap: 0.9rem; padding: 0 1rem; }
+      .material-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="site-name">Leonardo C. B. Cardoso</a>
+  <a href="index.html#working-papers">Working Papers</a>
+  <a href="index.html#publications">Publications</a>
+  <a href="index.html#pt-publications">Publicações (PT)</a>
+  <a href="r-software.html">R Software</a>
+  <a href="disciplinas.html">Disciplinas</a>
+</nav>
+
+<div class="page">
+
+  <div class="breadcrumb">
+    <a href="disciplinas.html">Disciplinas</a>
+    <span>/</span>
+    <span>ERU 101</span>
+  </div>
+
+  <div class="page-header">
+    <div class="course-code">ERU 101</div>
+    <h1>Teoria das Organizações</h1>
+    <p>Introdução à teoria das organizações. História do pensamento administrativo. Instâncias de análise das organizações.</p>
+    <a href="https://www3.dti.ufv.br/dti/catalogo/programa-analitico/60542" target="_blank" class="ementa-link">Ver ementa completa →</a>
+  </div>
+
+  <div class="material-section">
+    <h2>Materiais</h2>
+    <div class="material-grid">
+      
+      <a href="https://github.com/leonardocardoso005/leonardocardoso005.github.io/tree/main/ERU%20101/Aulas" target="_blank" class="material-item">
+        <div class="material-icon">🎞️</div>
+        <div class="material-name">Aulas</div>
+        <div class="material-desc">Slides e apresentações das aulas</div>
+        <span class="material-link">Acessar →</span>
+      </a>
+
+      <a href="https://github.com/leonardocardoso005/leonardocardoso005.github.io/tree/main/ERU%20101/Material_Didático" target="_blank" class="material-item">
+        <div class="material-icon">📚</div>
+        <div class="material-name">Material Didático</div>
+        <div class="material-desc">Leituras, exercícios e guias de estudos</div>
+        <span class="material-link">Acessar →</span>
+      </a>
+
+      <a href="https://github.com/leonardocardoso005/leonardocardoso005.github.io/tree/main/ERU%20101/Provas" target="_blank" class="material-item">
+        <div class="material-icon">📝</div>
+        <div class="material-name">Provas</div>
+        <div class="material-desc">Provas anteriores e referências</div>
+        <span class="material-link">Acessar →</span>
+      </a>
+
+    </div>
+  </div>
+
+  <footer>
+    Leonardo C. B. Cardoso &nbsp;·&nbsp; <a href="mailto:leonardocardoso@ufv.br">leonardocardoso@ufv.br</a>
+  </footer>
+
+</div>
+</body>
+</html>
