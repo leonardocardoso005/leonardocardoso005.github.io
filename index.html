@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Disciplinas · Leonardo C. B. Cardoso</title>
+  <title>Leonardo C. B. Cardoso</title>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DTBWBQ5DR"></script>
   <script>
@@ -14,7 +14,6 @@
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --bg:        #1c1917;
       --bg-card:   #231f1c;
@@ -27,7 +26,6 @@
       --tag-bg:    #2e2a27;
       --tag-text:  #d4913a;
     }
-
     body {
       background: var(--bg);
       color: var(--text);
@@ -35,7 +33,6 @@
       font-size: 16px;
       line-height: 1.75;
     }
-
     nav {
       background: #161412;
       border-bottom: 1px solid var(--border);
@@ -65,29 +62,63 @@
       transition: color 0.15s;
     }
     nav a:hover { color: var(--accent); }
-    nav a.active { color: var(--accent); }
-
     .page { max-width: 960px; margin: 0 auto; padding: 2.5rem 1.5rem 6rem; }
-
-    .page-header {
+    .hero {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2.5rem;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 1.8rem 2rem;
-      margin-bottom: 2rem;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
     }
-    .page-header h1 {
-      font-size: 1.4rem;
+    .hero-photo {
+      width: 180px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 6px;
+        object-position: center top;
+      background: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dim);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.75rem;
+      text-align: center;
+    }
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .hero-info h1 {
+      font-size: 1.6rem;
       font-weight: normal;
       color: var(--heading);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.2rem;
     }
-    .page-header p {
-      font-size: 0.95rem;
+    .hero-info .role {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.84rem;
       color: var(--text-dim);
-      font-style: italic;
+      margin-bottom: 1.2rem;
+      line-height: 1.5;
     }
-
+    .hero-info p { margin-bottom: 0.8rem; font-size: 0.97rem; }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.2rem;
+      margin-top: 1.2rem;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.81rem;
+    }
+    .contact-links a { color: var(--accent); text-decoration: none; }
+    .contact-links a:hover { text-decoration: underline; }
+    section { margin-bottom: 2.5rem; }
     h2 {
       font-family: "Helvetica Neue", Arial, sans-serif;
       font-size: 0.72rem;
@@ -97,139 +128,349 @@
       border-bottom: 1px solid var(--border);
       padding-bottom: 0.4rem;
       margin-bottom: 1.2rem;
-      margin-top: 2.2rem;
     }
-
-    .course-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
-      margin-bottom: 2rem;
-    }
-
-    .course-card {
+    .paper {
+      padding: 1rem 1.2rem;
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.6rem;
+      border-radius: 6px;
+      margin-bottom: 0.8rem;
+      border-left: 3px solid transparent;
+      transition: border-left-color 0.15s;
+    }
+    .paper:hover { border-left-color: var(--accent); }
+    .paper .title {
+      color: var(--heading);
+      font-style: italic;
+      margin-bottom: 0.25rem;
+    }
+    .paper .coauthors {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-bottom: 0.2rem;
+    }
+    .paper .venue {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.83rem;
+      color: var(--text-dim);
+    }
+    .paper a {
+      color: var(--accent);
       text-decoration: none;
-      color: inherit;
-      transition: border-color 0.15s, box-shadow 0.15s;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
+      font-size: 0.82rem;
     }
-
-    .course-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 2px 8px rgba(212, 145, 58, 0.15);
-    }
-
-    .course-code {
+    .paper a:hover { text-decoration: underline; }
+    .tag {
+      display: inline-block;
+      background: var(--tag-bg);
+      color: var(--tag-text);
       font-family: "Helvetica Neue", Arial, sans-serif;
       font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.4rem;
-      font-weight: 600;
-    }
-
-    .course-name {
-      font-size: 1.15rem;
-      color: var(--heading);
-      margin-bottom: 0.8rem;
-      font-weight: normal;
-    }
-
-    .course-desc {
-      font-size: 0.9rem;
-      color: var(--text-dim);
-      flex-grow: 1;
-      margin-bottom: 0.8rem;
-    }
-
-    .course-link {
-      display: inline-block;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.75rem;
-      color: var(--accent);
-      text-decoration: none;
       letter-spacing: 0.05em;
-      text-transform: uppercase;
+      padding: 0.1rem 0.45rem;
+      border-radius: 3px;
+      margin-left: 0.3rem;
+      vertical-align: middle;
       font-weight: 500;
-      margin-top: auto;
-      transition: text-decoration 0.15s;
     }
-
-    .course-link:hover {
-      text-decoration: underline;
-    }
-
     footer {
       border-top: 1px solid var(--border);
       padding-top: 1rem;
-      margin-top: 3rem;
       font-family: "Helvetica Neue", Arial, sans-serif;
       font-size: 0.78rem;
       color: var(--text-dim);
     }
     footer a { color: var(--accent); }
-
-    @media (max-width: 500px) {
-      body { padding: 2rem 1rem 4rem; }
-      nav { flex-wrap: wrap; gap: 0.9rem; padding: 0 1rem; }
-      .course-grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 620px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo { width: 140px; height: 170px; }
+      nav { gap: 1rem; padding: 0 1rem; }
     }
   </style>
 </head>
 <body>
-
 <nav>
   <a href="index.html" class="site-name">Leonardo C. B. Cardoso</a>
-  <a href="index.html#working-papers">Working Papers</a>
-  <a href="index.html#publications">Publications</a>
-  <a href="index.html#pt-publications">Publicações (PT)</a>
+  <a href="#working-papers">Working Papers</a>
+  <a href="#publications">Publications</a>
+  <a href="#pt-publications">Publicações (PT)</a>
   <a href="r-software.html">R Software</a>
-  <a href="disciplinas.html" class="active">Disciplinas</a>
+  <a href="disciplinas.html">Disciplinas</a>
 </nav>
-
 <div class="page">
-
-  <div class="page-header">
-    <h1>Disciplinas</h1>
-    <p>Materiais e recursos das disciplinas ministradas na UFV.</p>
+<div class="hero" id="about">
+    <div class="hero-photo">
+      <img src="papers/IMG_8964.JPG" alt="Leonardo Cardoso">
+    </div>
+    <div class="hero-info">
+      <h1>Leonardo Chaves Borges Cardoso</h1>
+      <div class="role">
+        Professor · Departamento de Economia Rural · Universidade Federal de Viçosa<br>
+        Visiting Researcher · Texas A&amp;M University (until January 2027)
+      </div>
+      <p>
+        I am a Professor in the
+        <a href="http://www.der.ufv.br/" style="color:var(--accent)">Department of Agricultural Economics</a>
+        at <a href="https://www.ufv.br/" style="color:var(--accent)">Universidade Federal de Viçosa</a>, Brazil.
+        I am currently a Visiting Researcher at Texas A&amp;M University (until Jan-2027).
+      </p>
+      <p>Research Interests: Energy Economics, Agricultural Economics, Environmental Economics, and Health Economics.</p>
+      <div class="contact-links">
+        <a href="mailto:leonardocardoso@ufv.br">leonardocardoso@ufv.br</a>
+        <a href="https://scholar.google.com/citations?user=3CVN9PIAAAAJ&hl=pt-BR" target="_blank">Google Scholar</a>
+        <a href="http://lattes.cnpq.br/0456821377367771" target="_blank">Lattes</a>
+      </div>
+    </div>
   </div>
-
-  <div class="course-grid">
-    <a href="eru-101.html" class="course-card">
-      <div class="course-code">ERU 101</div>
-      <div class="course-name">Introdução à Economia Ambiental</div>
-      <div class="course-desc">Conceitos fundamentais de economia ambiental, avaliação de bens públicos e problemas de externalidades.</div>
-      <span class="course-link">Ver Materiais →</span>
+  
+  <section id="working-papers">
+    <h2>Working Papers &amp; Work in Progress</h2>
+    <div class="paper">
+      <div class="title">The Earliest Inequality: Two-Parent Advantage, Food Inflation, and Birth Outcomes in the Brazilian Semiarid</div>
+      <div class="coauthors">with Carlos Eduardo I. Drumond and Carlos Estevão L. Cardoso</div>
+      <div class="venue">Submitted &nbsp;·&nbsp;
+        <a href="https://leonardocardoso005.github.io/papers/earliest-inequality.pdf" target="_blank">PDF</a> &nbsp;·&nbsp;
+     <br><br>
+    Presentations:
+    <span class="tag">Southern Economic Association, Houston-TX, US (forthcoming, Nov-2026)</span>
+      </div>
+    </div>
+    <div class="paper">
+  <div class="title">
+    Technical Change and Health: Evidence from the Reduction of Sugarcane Burning in Brazil
+  </div>
+  <div class="coauthors">
+    with Liqing Li, Deyvid Leite, Daiana Wischral, and David Just
+  </div>
+ <div class="venue">
+    Submission planned for 2026. &nbsp;·&nbsp;
+    <a href="project_sugarcane/" target="_blank">
+      Project Page
     </a>
-
-    <div class="course-card" style="opacity: 0.5; cursor: default;">
-      <div class="course-code">ERU 487</div>
-      <div class="course-name">Economia Ambiental Avançada</div>
-      <div class="course-desc">Tópicos avançados em economia ambiental e recursos naturais.</div>
-      <span class="course-link" style="pointer-events: none;">Em breve</span>
-    </div>
-
-    <div class="course-card" style="opacity: 0.5; cursor: default;">
-      <div class="course-code">ERU 786</div>
-      <div class="course-name">Seminário em Economia Ambiental</div>
-      <div class="course-desc">Discussão de tópicos avançados e pesquisa atual em economia ambiental.</div>
-      <span class="course-link" style="pointer-events: none;">Em breve</span>
-    </div>
+    <br><br>
+    Presentations:
+    <span class="tag">Anpec 2024, Natal-RN, Brazil</span>
+    <span class="tag">AERE@ASSA 2027, Washington, D.C., US (forthcoming, Jan-2027)</span>
   </div>
-
+</div>
+    <div class="paper">
+      <div class="title">Residential Pesticide Exposure and Child Health Outcomes in Brazil</div>
+      <div class="coauthors">with Stela Barbosa Januzzi and Loredany Rodrigues</div>
+      <div class="venue">Submission planned for 2026. &nbsp;·&nbsp;
+        <a href="https://leonardocardoso005.github.io/papers/pesticide-child-health.pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">When Privatization Raises Prices: Refinery Divestment and Consumer Welfare in Brazil</div>
+      <div class="coauthors">with Pietro Figueiredo and Laura R. A. Soares</div>
+      <div class="venue">Submission planned for 2026. &nbsp;·&nbsp;
+        <a href="https://leonardocardoso005.github.io/papers/privatizing-refinery.pdf" target="_blank">PDF</a>
+        <span class="tag">Anpec 2025, São Paulo-SP, Brazil</span>
+      </div>
+    </div>
+    
+    <div class="paper">
+      <div class="title">The Green Revolution in Brazil: Agricultural Frontier Expansion and Local Labor Markets</div>
+      <div class="venue">Work in progress</div>
+    </div>
+    <div class="paper">
+      <div class="title">Bike-Sharing Services as an Alternative in Urban Transportation: Evidence from a Developing Country</div>
+      <div class="coauthors">with Felipe de F. Silva</div>
+      <div class="venue">
+        <a href="https://drive.google.com/file/d/1cjlRV-iInqHeN4IiqXJep4TzxLbYrQYB/view?usp=sharing" target="_blank">Draft</a>
+      </div>
+    </div>
+  </section>
+  <section id="publications">
+    <h2>Publications</h2>
+    <div class="paper">
+      <div class="title">Biofuels Policies and Fuel Demand Elasticities in Brazil</div>
+      <div class="coauthors">with Maurício V. L. Bittencourt, Wade H. Litt, and Elena G. Irwin</div>
+      <div class="venue"><em>Energy Policy</em>, 128, 296–305, 2019 &nbsp;·&nbsp;
+        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0301421518308401" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Price Effects of Spatial Competition in Retail Fuel Markets: the Impact of a New Rival Nearby</div>
+      <div class="coauthors">with Frederico Uchôa, Williams Huamani, David R. Just, and Raúl V. Gomez</div>
+      <div class="venue"><em>Papers in Regional Science</em>, 2021 &nbsp;·&nbsp;
+        <a href="https://doi.org/10.1111/pirs.12645" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Distributional Effects of Gasoline Taxes in Brazil</div>
+      <div class="coauthors">with Bruno Y. Hipólito and Felipe de F. Silva</div>
+      <div class="venue"><em>Applied Economics Letters</em>, 2023 &nbsp;·&nbsp;
+        <a href="https://dx.doi.org/10.1080/13504851.2023.2289387" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Racial Discrimination in Access to Justice: Evidence from Brazil</div>
+      <div class="coauthors">with Bruno Truzzi, Viviani S. Lirio, Daniel R. C. Cerqueira, and Danilo S. C. Coelho</div>
+      <div class="venue"><em>International Journal for Crime, Justice and Social Democracy</em>, 2023 &nbsp;·&nbsp;
+        <a href="https://www.crimejusticejournal.com/article/view/2289" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Climate Change in Brazilian Agriculture: Vulnerability and Adaptation Assessment</div>
+      <div class="coauthors">with Elizângela A. Santos, Rosimeri Fortini, and José Zanúncio</div>
+      <div class="venue"><em>International Journal of Environmental Science and Technology</em>, 2023 &nbsp;·&nbsp;
+        <a href="https://link.springer.com/article/10.1007/s13762-022-04730-7" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Human Capital and Technology in the Growth of Economic Structure</div>
+      <div class="coauthors">with Deyvid W. Leite</div>
+      <div class="venue"><em>Investigación Económica</em>, 82(323), 27–52, 2023 &nbsp;·&nbsp;
+        <a href="https://www.revistas.unam.mx/index.php/rie/article/view/82953" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Regional Financial Integration, Financial Development and Industrial Sector Growth in ECOWAS</div>
+      <div class="coauthors">with Onyebuchi Iwegbu and Kainu Justine</div>
+      <div class="venue"><em>Cogent Economics &amp; Finance</em>, 10(1), 2022 &nbsp;·&nbsp;
+        <a href="https://www.tandfonline.com/doi/full/10.1080/23322039.2022.2050495" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Welfare Impacts of a Negative Income Tax on Regions of Brazil</div>
+      <div class="coauthors">with Rayan Wolf, Ângelo C. Gurgel, Marcos S. Nazareth, Ian Trotter, and Erly C. Teixeira</div>
+      <div class="venue"><em>Economic Systems Research</em>, 2021 &nbsp;·&nbsp;
+        <a href="https://www.tandfonline.com/doi/abs/10.1080/09535314.2021.1975098" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Racial Democracy and Black Victimization in Brazil</div>
+      <div class="coauthors">with Bruno Truzzi, Viviani S. Lirio, Daniel R. C. Cerqueira, and Danilo S. C. Coelho</div>
+      <div class="venue"><em>Journal of Contemporary Criminal Justice</em>, 2021 &nbsp;·&nbsp;
+        <a href="https://doi.org/10.1177/10439862211038448" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">The Asymmetric Pattern of Fuel Demand in Brazil</div>
+      <div class="coauthors">with Frederico Uchôa and Cleiton S. de Jesus</div>
+      <div class="venue"><em>Economics Bulletin</em>, 41(1), 155–160, 2021 &nbsp;·&nbsp;
+        <a href="http://www.accessecon.com/Pubs/EB/2021/Volume0/EB-21-V41-I1-P14.pdf" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Demand for Light Fuels in Brazil: an Approach Using Spatial Panel Data Models</div>
+      <div class="coauthors">with Maurício V. L. Bittencourt and Alexandre A. Porsse</div>
+      <div class="venue"><em>Nova Economia (UFMG)</em>, 30, 231–256, 2020 &nbsp;·&nbsp;
+        <a href="https://www.scielo.br/j/neco/a/hGtH74ZRGZszgcBr6YjtPdb/" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Fuel Demand Elasticities in Brazil: a Panel Data Analysis with Instrumental Variables</div>
+      <div class="coauthors">with Frederico Uchôa and Cleiton S. de Jesus</div>
+      <div class="venue"><em>International Journal of Energy Economics and Policy</em>, 10, 450–457, 2020 &nbsp;·&nbsp;
+        <a href="https://www.econjournals.com/index.php/ijeep/article/view/8787" target="_blank">Link</a>
+      </div>
+    </div>
+  </section>
+  <section id="pt-publications">
+    <h2>Publicações em Periódicos Brasileiros</h2>
+    <div class="paper">
+      <div class="title">Uma nota sobre mobilidade ocupacional e diferença salarial no Brasil</div>
+      <div class="coauthors">com Leandro Higano, Rayan Wolf e Maria Micheliana C. Silva</div>
+      <div class="venue"><em>Revista Brasileira de Economia (RBE)</em>, 2023 &nbsp;·&nbsp;
+        <a href="https://bibliotecadigital.fgv.br/ojs/index.php/rbe/article/view/81116" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Efeitos do Investimento Estrangeiro Direto e das Características dos Países Hospedeiros no Crescimento Econômico</div>
+      <div class="coauthors">com Marcos J. Ribeiro</div>
+      <div class="venue"><em>Revista Análise Econômica (RAE)</em>, forthcoming</div>
+    </div>
+    <div class="paper">
+      <div class="title">Inflação de Alimentos no Brasil: o Papel dos Preços Internacionais</div>
+      <div class="coauthors">com José Eustáquio Ribeiro Vieira Filho</div>
+      <div class="venue"><em>Texto para Discussão, IPEA</em> &nbsp;·&nbsp;
+        <a href="https://repositorio.ipea.gov.br/server/api/core/bitstreams/6f73ad70-0aa3-43fb-b35f-69e5c8df6b6e/content" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Evidências do hiato de gênero e produtividade na indústria de transformação brasileira</div>
+      <div class="coauthors">com Vinicius Campos e Maria Micheliana C. Silva</div>
+      <div class="venue"><em>Revista de Economia Contemporânea</em>, 25(2), 2021 &nbsp;·&nbsp;
+        <a href="https://doi.org/10.1590/198055272522" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">O efeito das UPAs na taxa de internações por condições sensíveis à atenção primária</div>
+      <div class="coauthors">com Rodrigo V. V. Medeiros e João G. A. Costa</div>
+      <div class="venue"><em>Estudos Econômicos</em>, 2021 &nbsp;·&nbsp;
+        <a href="https://doi.org/10.1590/1980-53575142rjl" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Distância à instituição de ensino e demanda por educação superior</div>
+      <div class="coauthors">com Bruna L. R. Araújo</div>
+      <div class="venue"><em>Revista de Economia Aplicada</em>, 25(3), 2021 &nbsp;·&nbsp;
+        <a href="https://www.revistas.usp.br/ecoa/article/view/167107" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">O efeito da concorrência de importações chinesas na saúde dos trabalhadores brasileiros</div>
+      <div class="coauthors">com Alícia Cechin, Carlos A. Charris e Fernanda A. Silva</div>
+      <div class="venue"><em>Revista de Economia Aplicada</em>, 25(2), 2021 &nbsp;·&nbsp;
+        <a href="https://www.revistas.usp.br/ecoa/article/view/172603" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Política de Cotas: Uma democratização ao acesso para cursos de graduação na UFV</div>
+      <div class="coauthors">com Ykaru G. Wagner e Cristiana T. Rodrigues</div>
+      <div class="venue"><em>Revista Brasileira de Política e Administração da Educação</em>, 37, 394–416, 2021 &nbsp;·&nbsp;
+        <a href="https://seer.ufrgs.br/rbpae/article/view/107529/61624" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Avaliação de Impacto do Regime Especial de Tributação RECAP nas Importações de Bens de Capital</div>
+      <div class="coauthors">com Thiago F. Ladeira</div>
+      <div class="venue"><em>Teoria e Evidência Econômica (UPF)</em>, 25, 275–292, 2021 &nbsp;·&nbsp;
+        <a href="http://seer.upf.br/index.php/rtee/article/view/8691" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Complexidade Econômica, Crescimento e Convergência de Renda na América Latina, Caribe e Ásia</div>
+      <div class="coauthors">com Thiago F. Ladeira</div>
+      <div class="venue"><em>Economia Ensaios</em>, 35, 48–74, 2020 &nbsp;·&nbsp;
+        <a href="http://www.seer.ufu.br/index.php/revistaeconomiaensaios/article/view/46154" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Efeitos econômicos e distributivos da pandemia de coronavírus no Brasil</div>
+      <div class="coauthors">com Graziella Magalhães</div>
+      <div class="venue"><em>Revista de Economia e Agronegócio</em>, 2020 &nbsp;·&nbsp;
+        <a href="https://periodicos.ufv.br/rea/article/view/10605" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Elasticidades da demanda por diesel no Brasil</div>
+      <div class="coauthors">com Cleiton S. de Jesus</div>
+      <div class="venue"><em>Reflexões Econômicas</em>, 5, 88–107, 2020 &nbsp;·&nbsp;
+        <a href="https://periodicos.uesc.br/index.php/reflexoeseconomicas/article/view/3019" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Sofisticação das Exportações, Crescimento Econômico e Convergência de Renda nos Estados Brasileiros</div>
+      <div class="coauthors">com Thiago F. Ladeira</div>
+      <div class="venue"><em>Revista Brasileira de Estudos Regionais e Urbanos</em>, 13, 537–560, 2019 &nbsp;·&nbsp;
+        <a href="https://revistaaber.org.br/rberu/article/view/523" target="_blank">Link</a>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="title">Mensuração das elasticidades-preço da demanda, cruzada e renda no mercado de etanol brasileiro</div>
+      <div class="coauthors">com Maurício V. L. Bittencourt</div>
+      <div class="venue"><em>Revista de Economia e Sociologia Rural</em>, 51, 765–784, 2013 &nbsp;·&nbsp;
+        <a href="https://www.scielo.br/j/resr/a/3JDgGVvDC5KbqgbSNKrtb9Q/" target="_blank">Link</a>
+      </div>
+    </div>
+  </section>
   <footer>
     Leonardo C. B. Cardoso &nbsp;·&nbsp; <a href="mailto:leonardocardoso@ufv.br">leonardocardoso@ufv.br</a>
   </footer>
-
 </div>
 </body>
 </html>
