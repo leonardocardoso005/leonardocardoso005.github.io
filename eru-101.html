@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Disciplinas · Leonardo C. B. Cardoso</title>
+  <title>ERU 101 · Leonardo C. B. Cardoso</title>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DTBWBQ5DR"></script>
   <script>
@@ -22,7 +22,6 @@
       --text:      #b8afa6;
       --text-dim:  #7d7167;
       --accent:    #d4913a;
-      --accent-lt: #2e2a27;
       --heading:   #f0ebe4;
       --tag-bg:    #2e2a27;
       --tag-text:  #d4913a;
@@ -82,6 +81,15 @@
       color: var(--heading);
       margin-bottom: 0.4rem;
     }
+    .page-header .course-code {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
     .page-header p {
       font-size: 0.95rem;
       color: var(--text-dim);
@@ -100,56 +108,54 @@
       margin-top: 2.2rem;
     }
 
-    .course-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
+    .material-section {
       margin-bottom: 2rem;
     }
 
-    .course-card {
+    .material-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .material-item {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.6rem;
+      border-radius: 6px;
+      padding: 1.2rem;
       text-decoration: none;
       color: inherit;
       transition: border-color 0.15s, box-shadow 0.15s;
-      cursor: pointer;
       display: flex;
       flex-direction: column;
     }
 
-    .course-card:hover {
+    .material-item:hover {
       border-color: var(--accent);
-      box-shadow: 0 2px 8px rgba(212, 145, 58, 0.15);
+      box-shadow: 0 2px 8px rgba(212, 145, 58, 0.1);
     }
 
-    .course-code {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.4rem;
-      font-weight: 600;
+    .material-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.6rem;
+      line-height: 1;
     }
 
-    .course-name {
-      font-size: 1.15rem;
+    .material-name {
+      font-size: 0.95rem;
       color: var(--heading);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.4rem;
       font-weight: normal;
     }
 
-    .course-desc {
-      font-size: 0.9rem;
+    .material-desc {
+      font-size: 0.85rem;
       color: var(--text-dim);
+      margin-bottom: 0.6rem;
       flex-grow: 1;
-      margin-bottom: 0.8rem;
     }
 
-    .course-link {
+    .material-link {
       display: inline-block;
       font-family: "Helvetica Neue", Arial, sans-serif;
       font-size: 0.75rem;
@@ -162,7 +168,46 @@
       transition: text-decoration 0.15s;
     }
 
-    .course-link:hover {
+    .material-link:hover {
+      text-decoration: underline;
+    }
+
+    .empty-placeholder {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.2rem;
+      text-align: center;
+      opacity: 0.6;
+    }
+
+    .empty-placeholder .material-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .empty-placeholder p {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-bottom: 1.2rem;
+    }
+
+    .breadcrumb a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: text-decoration 0.15s;
+    }
+
+    .breadcrumb a:hover {
       text-decoration: underline;
     }
 
@@ -179,7 +224,7 @@
     @media (max-width: 500px) {
       body { padding: 2rem 1rem 4rem; }
       nav { flex-wrap: wrap; gap: 0.9rem; padding: 0 1rem; }
-      .course-grid {
+      .material-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -198,31 +243,45 @@
 
 <div class="page">
 
-  <div class="page-header">
-    <h1>Disciplinas</h1>
-    <p>Materiais e recursos das disciplinas ministradas na UFV.</p>
+  <div class="breadcrumb">
+    <a href="disciplinas.html">Disciplinas</a>
+    <span>/</span>
+    <span>ERU 101</span>
   </div>
 
-  <div class="course-grid">
-    <a href="eru-101.html" class="course-card">
-      <div class="course-code">ERU 101</div>
-      <div class="course-name">Introdução à Economia Ambiental</div>
-      <div class="course-desc">Conceitos fundamentais de economia ambiental, avaliação de bens públicos e problemas de externalidades.</div>
-      <span class="course-link">Ver Materiais →</span>
-    </a>
+  <div class="page-header">
+    <div class="course-code">ERU 101</div>
+    <h1>Introdução à Economia Ambiental</h1>
+    <p>Conceitos fundamentais de economia ambiental, avaliação de bens públicos e problemas de externalidades.</p>
+  </div>
 
-    <div class="course-card" style="opacity: 0.5; cursor: default;">
-      <div class="course-code">ERU 487</div>
-      <div class="course-name">Economia Ambiental Avançada</div>
-      <div class="course-desc">Tópicos avançados em economia ambiental e recursos naturais.</div>
-      <span class="course-link" style="pointer-events: none;">Em breve</span>
+  <div class="material-section">
+    <h2>Provas Anteriores</h2>
+    <div class="material-grid">
+      <div class="empty-placeholder">
+        <div class="material-icon">📄</div>
+        <p>Nenhuma prova disponível ainda</p>
+      </div>
     </div>
+  </div>
 
-    <div class="course-card" style="opacity: 0.5; cursor: default;">
-      <div class="course-code">ERU 786</div>
-      <div class="course-name">Seminário em Economia Ambiental</div>
-      <div class="course-desc">Discussão de tópicos avançados e pesquisa atual em economia ambiental.</div>
-      <span class="course-link" style="pointer-events: none;">Em breve</span>
+  <div class="material-section">
+    <h2>Listas de Exercícios</h2>
+    <div class="material-grid">
+      <div class="empty-placeholder">
+        <div class="material-icon">📋</div>
+        <p>Nenhuma lista disponível ainda</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="material-section">
+    <h2>Slides</h2>
+    <div class="material-grid">
+      <div class="empty-placeholder">
+        <div class="material-icon">🎞️</div>
+        <p>Nenhum slide disponível ainda</p>
+      </div>
     </div>
   </div>
 
