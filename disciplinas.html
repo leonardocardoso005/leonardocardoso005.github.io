@@ -154,3 +154,82 @@
       font-family: "Helvetica Neue", Arial, sans-serif;
       font-size: 0.75rem;
       color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-top: auto;
+      transition: text-decoration 0.15s;
+    }
+
+    .course-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      margin-top: 3rem;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+    footer a { color: var(--accent); }
+
+    @media (max-width: 500px) {
+      body { padding: 2rem 1rem 4rem; }
+      nav { flex-wrap: wrap; gap: 0.9rem; padding: 0 1rem; }
+      .course-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="site-name">Leonardo C. B. Cardoso</a>
+  <a href="index.html#working-papers">Working Papers</a>
+  <a href="index.html#publications">Publications</a>
+  <a href="index.html#pt-publications">Publicações (PT)</a>
+  <a href="r-software.html">R Software</a>
+  <a href="disciplinas.html" class="active">Disciplinas</a>
+</nav>
+
+<div class="page">
+
+  <div class="page-header">
+    <h1>Disciplinas</h1>
+    <p>Materiais e recursos das disciplinas ministradas na UFV.</p>
+  </div>
+
+  <div class="course-grid">
+    <a href="eru-101.html" class="course-card">
+      <div class="course-code">ERU 101</div>
+      <div class="course-name">Introdução à Economia Ambiental</div>
+      <div class="course-desc">Conceitos fundamentais de economia ambiental, avaliação de bens públicos e problemas de externalidades.</div>
+      <span class="course-link">Ver Materiais →</span>
+    </a>
+
+    <div class="course-card" style="opacity: 0.5; cursor: default;">
+      <div class="course-code">ERU 487</div>
+      <div class="course-name">Economia Ambiental Avançada</div>
+      <div class="course-desc">Tópicos avançados em economia ambiental e recursos naturais.</div>
+      <span class="course-link" style="pointer-events: none;">Em breve</span>
+    </div>
+
+    <div class="course-card" style="opacity: 0.5; cursor: default;">
+      <div class="course-code">ERU 786</div>
+      <div class="course-name">Seminário em Economia Ambiental</div>
+      <div class="course-desc">Discussão de tópicos avançados e pesquisa atual em economia ambiental.</div>
+      <span class="course-link" style="pointer-events: none;">Em breve</span>
+    </div>
+  </div>
+
+  <footer>
+    Leonardo C. B. Cardoso &nbsp;·&nbsp; <a href="mailto:leonardocardoso@ufv.br">leonardocardoso@ufv.br</a>
+  </footer>
+
+</div>
+</body>
+</html>
