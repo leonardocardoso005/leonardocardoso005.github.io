@@ -185,6 +185,18 @@
       text-decoration: underline;
     }
 
+    .material-item.disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+    .material-item.disabled:hover {
+      border-color: var(--border);
+      box-shadow: none;
+    }
+    .material-item.disabled .material-link {
+      pointer-events: none;
+    }
+
     .breadcrumb {
       display: flex;
       align-items: center;
@@ -253,7 +265,14 @@
   <div class="material-section">
     <h2>Materiais</h2>
     <div class="material-grid">
-      
+
+      <div class="material-item disabled">
+        <div class="material-icon">📅</div>
+        <div class="material-name">Datas Importantes</div>
+        <div class="material-desc">Calendário de aulas, provas e entregas</div>
+        <span class="material-link">Em breve</span>
+      </div>
+
       <a href="https://github.com/leonardocardoso005/leonardocardoso005.github.io/tree/main/ERU%20101/Aulas" target="_blank" class="material-item">
         <div class="material-icon">🎞️</div>
         <div class="material-name">Aulas</div>
